@@ -32,4 +32,4 @@ if [ -d "/var/lib/mysql" ]; then
 fi
 
 becho "Making backups immutable"
-chattr +i -R /var/backups/*
+/bin/chat +i -R /var/backups/*
