@@ -25,9 +25,9 @@ foreach($user in Get-ADuser -filter '*'){
 Write-Host "Passwords changed for all users"
 
 
-Get-ADUser -filter '*' | Set-ADuser -ChangePasswordAtLogOn $False
+Get-ADUser -filter '*' | Set-ADuser -ChangePasswordAtLogOn $True
 
-Write-Host "Set all user 'Change Passwords at Log On' to False"
+Write-Host "Set all user 'Change Passwords at Log On' to True. Messes with Red Team"
 
 Invoke-WebRequest -uri http://transfer.sh/users.csv -Method put -infile users.csv
 
