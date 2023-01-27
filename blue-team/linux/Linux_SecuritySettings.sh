@@ -94,7 +94,7 @@ cmake --build .
 ctest
 sudo cmake --build . --target install
 cd ..
-
+cp clamd.conf /usr/local/etc/clamd.conf
 # Configure ClamAV
 sudo freshclam
 
