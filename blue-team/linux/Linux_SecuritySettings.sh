@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo apt-get install build-essential
 # Install Firewall
 #sudo apt-get install -y ufw
 
