@@ -1,26 +1,26 @@
 #!/bin/bash
 
 # Install Firewall
-sudo apt-get install -y ufw
+#sudo apt-get install -y ufw
 
 # Configure Firewall
-sudo ufw enable
+#sudo ufw enable
 
 # Deny all incoming connections
-sudo ufw default deny incoming
+#sudo ufw default deny incoming
 
 # Allow all outgoing connections
-sudo ufw default allow outgoing
+#sudo ufw default allow outgoing
 
 # Allow SSH
-sudo ufw allow ssh
+#sudo ufw allow ssh
 
 # Restrict SSH Access
-sudo ufw limit ssh
+#sudo ufw limit ssh
 
 # Allow web services
-sudo ufw allow http
-sudo ufw allow https
+#sudo ufw allow http
+#sudo ufw allow https
 
 # Install and configure a Network Intrusion Detection System (NIDS)
 #install from tar.gz
