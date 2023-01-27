@@ -93,6 +93,7 @@ cmake .. \
 cmake --build .
 ctest
 sudo cmake --build . --target install
+cd ..
 
 # Configure ClamAV
 sudo freshclam
