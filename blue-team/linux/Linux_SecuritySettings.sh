@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install build-essential && apt-get install openssl
+sudo apt-get install -y build-essential && apt-get install -y openssl
 # Install Firewall
 #sudo apt-get install -y ufw
 
