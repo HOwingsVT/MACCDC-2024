@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install build-essential
+sudo apt-get install build-essential && apt-get install openssl
 # Install Firewall
 #sudo apt-get install -y ufw
 
@@ -93,10 +93,9 @@ cmake .. \
 cmake --build .
 ctest
 sudo cmake --build . --target install
-cd ..
-cp clamd.conf /usr/local/etc/clamd.conf
+cd ../..
 # Configure ClamAV
-sudo freshclam
+cp clamd.conf /usr/local/etc/clamd.conf
 
 # Install and configure DenyHosts
 #sudo apt-get install -y denyhosts
