@@ -81,24 +81,34 @@ cd ..
 sudo rkhunter --propupd
 
 # Install and configure ClamAV from clamav-1.0.0.linux.x86_64.deb
-sudo dpkg -i clamav-1.0.0.linux.x86_64.deb
-
+tar -xvzf clamav-0.103.7.tar.gz
+cd clamav-0.103.7
+mkdir build && cd build
+cmake .. \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D APP_CONFIG_DIRECTORY=/etc/clamav \
+    -D DATABASE_DIRECTORY=/var/lib/clamav \
+    -D ENABLE_JSON_SHARED=OFF
+cmake --build .
+ctest
+sudo cmake --build . --target install
 
 # Configure ClamAV
 sudo freshclam
 
 # Install and configure DenyHosts
-sudo apt-get install -y denyhosts
+#sudo apt-get install -y denyhosts
 
 # Configure DenyHosts
-sudo sed -i "s/^DENY_THRESHOLD_INVALID = .*/DENY_THRESHOLD_INVALID = 5/" /etc/denyhosts.conf
+#sudo sed -i "s/^DENY_THRESHOLD_INVALID = .*/DENY_THRESHOLD_INVALID = 5/" /etc/denyhosts.conf
 
 # Install and configure OSSEC
-sudo apt-get install -y ossec-hids
+#sudo apt-get install -y ossec-hids
 
 # Configure OSSEC
-sudo sed -i "s/<email_notification>no<\/email_notification>/<email_notification>yes<\/email_notification>/" /var/ossec/etc/ossec.conf
-sudo sed -i "s/<email_to>your@address.com<\/email_to>/<email_to>you@yourdomain.com<\/email_to>/" /var/ossec/etc/ossec.conf
+#sudo sed -i "s/<email_notification>no<\/email_notification>/<email_notification>yes<\/email_notification>/" /var/ossec/etc/ossec.conf
+#sudo sed -i "s/<email_to>your@address.com<\/email_to>/<email_to>you@yourdomain.com<\/email_to>/" /var/ossec/etc/ossec.conf
 
 # Install and configure Tripwire
 tar -xvzf tripwire-open-source-2.4.3.7.tar.gz
