@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install -y build-essential && apt-get install -y openssl
+sudo apt-get install -y build-essential && apt-get install -y openssl && apt-get install net-tools
 # Install Firewall
 #sudo apt-get install -y ufw
 
@@ -81,22 +81,24 @@ cd ..
 sudo rkhunter --propupd
 
 # Install and configure ClamAV from clamav-1.0.0.linux.x86_64.deb
-tar -xvzf clamav-0.103.7.tar.gz
-cd clamav-0.103.7
-mkdir build && cd build
-cmake .. \
-    -D CMAKE_INSTALL_PREFIX=/usr \
-    -D CMAKE_INSTALL_LIBDIR=lib \
-    -D APP_CONFIG_DIRECTORY=/etc/clamav \
-    -D DATABASE_DIRECTORY=/var/lib/clamav \
-    -D ENABLE_JSON_SHARED=OFF
-cmake --build .
-ctest
-sudo cmake --build . --target install
-cd ../..
+#tar -xvzf clamav-0.103.7.tar.gz
+#cd clamav-0.103.7
+#mkdir build && cd build
+#cmake .. \
+#    -D CMAKE_INSTALL_PREFIX=/usr \
+ #   -D CMAKE_INSTALL_LIBDIR=lib \
+  #  -D APP_CONFIG_DIRECTORY=/etc/clamav \
+   # -D DATABASE_DIRECTORY=/var/lib/clamav \
+    #-D ENABLE_JSON_SHARED=OFF
+#cmake --build .
+#ctest
+#sudo cmake --build . --target install
+#cd ../..
 # Configure ClamAV
-cp clamd.conf /usr/local/etc/clamd.conf
-
+#sudo dpkg-reconfigure clamav-freshclam
+#sudo rm -f /usr/local/etc/freshclam.conf
+#sudo ln -s /etc/clamav/freshclam.conf /usr/local/etc/freshclam.conf
+#sudo freshclam
 # Install and configure DenyHosts
 #sudo apt-get install -y denyhosts
 
