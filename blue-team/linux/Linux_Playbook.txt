@@ -1,0 +1,17 @@
+IF YOU REMOVE FILES KEEP A COPY OF THEM!!!!!
+
+Initial
+    Access machines
+    Copy scripts onto linux machines
+    Run initial scripts for each operating system
+    Start monitoring scripts
+    Nmap our own box to look for services/ports not required
+    Stop services that shouldn't be running (make sure they are not in business plan)
+    Manually go through services to check them
+    Keep monitoring logs for rest of time
+
+On incident
+    Kick offenders
+    Change passwords
+    Fix exploit
+    Figure out what they got
