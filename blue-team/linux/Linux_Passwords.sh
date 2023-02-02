@@ -27,4 +27,5 @@ for i in $(ls /var/www); do
     htpasswd -b /var/www/$i/.htpasswd root $password
 done
 
+echo "$password"
 echo "Passwords changed successfully!"
