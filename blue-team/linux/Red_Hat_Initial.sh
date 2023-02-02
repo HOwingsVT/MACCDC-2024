@@ -23,14 +23,37 @@ service sshd restart
 
 # Configure Firewall
 # Allow HTTP and HTTPS
-firewall-cmd --permanent --zone=public --add-service=http
-firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --permanent --zone=public --add-port=80
+firewall-cmd --permanent --zone=public --add-port=8161
+vnc_port=$(netstat -tulnp | awk '/vnc/ {print $4}' | sed 's/[^:]*://')
+firewall-cmd --permanent --zone=public --add-port=$vnc_port
+firewall-cmd --permanent --zone=public --add-port=22
 
-# Allow SSH
-firewall-cmd --permanent --zone=public --add-service=ssh
-firewall-cmd --permanent --zone=public --add-service=vnc
-# Reload firewall
+
+# get list of all current open ports
+ports=$(netstat -tulnp | awk '/^tcp/ {print $4}' | sed 's/[^:]*://')
+
+# get VNC port (if it exists)
+vnc_port=$(netstat -tulnp | awk '/vnc/ {print $4}' | sed 's/[^:]*://')
+
+# loop through all open ports
+for port in $ports
+do
+	# if port is not 22, 80, 8161, or VNC, close it
+	if [ "$port" != "22" ] && [ "$port" != "80" ] && [ "$port" != "8161" ] && [ "$port" != "$vnc_port" ]
+	then
+		firewall-cmd --zone=public --remove-port=$port/tcp --permanent
+		echo "Port $port closed."
+	fi
+done
+
+# reload firewall for changes to take effect
 firewall-cmd --reload
+
+
+# Save iptables
+service iptables save
+
 
 # Update system
 yum update -y

@@ -23,11 +23,12 @@ systemctl restart sshd
 
 # Configure Firewall
 # Allow HTTP and HTTPS
-firewall-cmd --permanent --zone=public --add-service=http
-firewall-cmd --permanent --zone=public --add-service=https
-# Allow SSH
-firewall-cmd --permanent --zone=public --add-service=ssh
-firewall-cmd --permanent --zone=public --add-service=vnc
+firewall-cmd --permanent --zone=public --add-port=5601
+firewall-cmd --permanent --zone=public --add-port=8080
+firewall-cmd --permanent --zone=public --add-port=8161
+vnc_port=$(netstat -tulnp | awk '/vnc/ {print $4}' | sed 's/[^:]*://')
+firewall-cmd --permanent --zone=public --add-port=$vnc_port
+firewall-cmd --permanent --zone=public --add-port=2222
 # Reload firewall
 firewall-cmd --reload
 

@@ -24,9 +24,7 @@ service ssh restart
 # Configure Firewall
 # Allow HTTP and HTTPS
 ufw allow http
-ufw allow https
 # Allow SSH
-ufw allow ssh
 ufw allow vnc
 # Reload firewall
 ufw reload
