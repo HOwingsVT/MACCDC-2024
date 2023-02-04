@@ -44,3 +44,29 @@ netsh advfirewall firewall add rule name="LDAPS OUT TCP 636" dir=out action=allo
 
 netsh advfirewall firewall add rule name="LDAPS IN TCP 636" dir=in action=allow protocol=UDP localport=636
 netsh advfirewall firewall add rule name="LDAPS OUT TCP 636" dir=out action=allow protocol=UDP localport=636
+
+# add DNS
+netsh advfirewall firewall add rule name="DNS IN TCP 53" dir=in action=allow protocol=TCP localport=53
+netsh advfirewall firewall add rule name="DNS OUT TCP 53" dir=out action=allow protocol=TCP localport=53
+
+#add SMB
+netsh advfirewall firewall add rule name="SMB IN TCP 445" dir=in action=allow protocol=TCP localport=445
+netsh advfirewall firewall add rule name="SMB OUT TCP 445" dir=out action=allow protocol=TCP localport=445
+
+#add RDP
+netsh advfirewall firewall add rule name="RDP IN TCP 3389" dir=in action=allow protocol=TCP localport=3389
+netsh advfirewall firewall add rule name="RDP OUT TCP 3389" dir=out action=allow protocol=TCP localport=3389
+
+#add ICMP
+netsh advfirewall firewall add rule name="ICMP IN" dir=in action=allow protocol=ICMPv4:8,any
+netsh advfirewall firewall add rule name="ICMP OUT" dir=out action=allow protocol=ICMPv4:8,any
+
+#add mysql and postgres
+netsh advfirewall firewall add rule name="MYSQL IN TCP 3306" dir=in action=allow protocol=TCP localport=3306
+netsh advfirewall firewall add rule name="MYSQL OUT TCP 3306" dir=out action=allow protocol=TCP localport=3306
+netsh advfirewall firewall add rule name="POSTGRES IN TCP 5432" dir=in action=allow protocol=TCP localport=5432
+netsh advfirewall firewall add rule name="POSTGRES OUT TCP 5432" dir=out action=allow protocol=TCP localport=5432
+
+#add nfs
+netsh advfirewall firewall add rule name="NFS IN TCP 2049" dir=in action=allow protocol=TCP localport=2049
+netsh advfirewall firewall add rule name="NFS OUT TCP 2049" dir=out action=allow protocol=TCP localport=2049
