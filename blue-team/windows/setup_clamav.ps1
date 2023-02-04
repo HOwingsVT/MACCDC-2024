@@ -1,4 +1,4 @@
-wget https://www.clamav.net/downloads/production/clamav-1.0.0.win.x64.msi -outfile clamav.msi
+wget http://10.250.250.6/Clamav/clamav-1.0.0.win.x64.msi -outfile clamav.msi
 .\clamav.msi /quiet
 
 cp "C:\Program Files\ClamAV\conf_examples\clamd.conf.sample" "C:\Program Files\ClamAV\clamd.conf"

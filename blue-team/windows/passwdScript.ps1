@@ -18,9 +18,7 @@ $template = read-host "Enter new password"
 foreach($user in Get-ADuser -filter '*'){
     $newPasswd = ConvertTo-SecureString ($template + $user.SAMAccountName) -AsPlainText -Force
     Set-ADAccountPassword $user.SAMAccountName -NewPassword $newPasswd -reset -PassThru
-	$name = ConvertTo-SecureString($user.SAMAccountName + " , " + $newPasswd + "\n") 
-	Get-ADUser -Filter * -Properties * | Select-Object name | export-csv -path c:\users.csv
-
+	
 }
 Write-Host "Passwords changed for all users"
 
