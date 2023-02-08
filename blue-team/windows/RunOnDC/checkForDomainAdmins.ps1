@@ -1,3 +1,7 @@
+#Author: S1n1st3r
+
+Import-Module ActiveDirectory
+
 #search for DA's in the domain
 $domainAdmins = Get-ADGroupMember -Identity "Domain Admins" -Recursive
 $domainAdmins | Select-Object name | export-csv -path c:\export\domainAdmins.csv
@@ -18,11 +22,6 @@ write-host "Removing anyone that isnt Administrator. If you see a user that is n
 $addSelfToDA | Where-Object {$_.name -notmatch "Administrator"} | Remove-ADGroupMember -Identity "Add-User-To-Group"
 #remove DAs that are not administrators
 $domainAdmins | Where-Object {$_.name -notmatch "Administrator"} | Remove-ADGroupMember -Identity "Domain Admins"
-
-# Author: Luis Garcia
-# Script sets groups back to default by removing users that do not belong in the groups by default.
-
-Import-Module ActiveDirectory
 
 write-host "`nRemoving users out of groups unless they belong by default.`n"
 
