@@ -14,5 +14,7 @@ $users = Get-ADUser -Filter *
 foreach ($user in $users) {
     Write-Progress -Activity "Changing passwords" -Status "Changing password for $($user.name)" -PercentComplete (($users.IndexOf($user) + 1) / $users.Count * 100)
     Set-ADAccountPassword -Identity $user.DistinguishedName -NewPassword (ConvertTo-SecureString $password -AsPlainText -Force)
-    set-aduser $user -ChangePasswordAtLogon:$true
+    if ($user.SamAccountName -ne "Administrator") {
+        Set-ADUser $user -ChangePasswordAtLogon:$true
+    }
 }
