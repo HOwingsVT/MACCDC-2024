@@ -23,6 +23,7 @@ $SecuritySettings = @{
     "Require Network Level Authentication" = "Enabled"
     "WinRM listener restriction" = "Enabled"
     "Encrypt WinRM traffic" = "Enabled"
+    "PowerShell Script Block Logging Location" = "C:\Windows\Users\Administrator\Desktop\"
 }
 
 # Apply the security settings to the GPO
