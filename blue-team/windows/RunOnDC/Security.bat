@@ -1,7 +1,7 @@
 REM  Run this script in an elevated CMD prompt
 REM  This does not include firewall rules
 REM Comment out any sections that do not apply to a certain service (ex. SMB scored box)
-REM Don't forget to use msconfig
+REM Don't forget to use msconfig!!
 
 
 REM sc.exe config “wfcs” displayname= “wfcservice”
