@@ -9,6 +9,9 @@ REM sc.exe description wfcs “wfcservice description”
 REM perm charlie delta
 @echo off
 
+REM get gpo update
+gpupdate /force
+
 REM rename admin acct + disable default accounts
 REM wmic useraccount where "name='Administrator'" rename Admin
 REM net user Administrator /active:no
