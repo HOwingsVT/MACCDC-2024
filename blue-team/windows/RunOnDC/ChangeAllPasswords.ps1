@@ -5,7 +5,7 @@
 Set-ADDefaultDomainPasswordPolicy -Identity (Get-ADDomain).DistinguishedName -ComplexityEnabled $false
 
 # Define the password to set for all users
-$password = Read-Host "Enter the password for all users"
+$password = Read-Host "Enter the password for all DOMAIN users"
 
 # Get all users in the domain
 $users = Get-ADUser -Filter *
