@@ -17,6 +17,14 @@ net user DefaultAccount /active:no
 net user WDAGUtilityAccount /active:no
 
 
+REM change all local account passwords
+REM ask for password
+set /p password=Enter new password for all local accounts:
+REM loop through all local users and change password
+for /f "tokens=1,2 delims=:" %%a in ('net user ^| find "Local"') do net user %%a %password% /y
+
+
+
 REM Enable full auditing
 auditpol /set /category:* /success:enable /failure:enable
 
