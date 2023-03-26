@@ -4,6 +4,7 @@ Import-Module -Name ActiveDirectory
 Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment
 
 Import-Module CertificateAuthority
+Import-Module AdcsAdministration
 
 certutil -config "CA CONNECTION STRING" -setreg policy\EditFlags - EDITF_ATTRIBUTESUBJECTALTNAME2
 # setup CA requires manager approval
