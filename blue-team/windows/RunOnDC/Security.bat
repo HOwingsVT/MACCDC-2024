@@ -139,8 +139,6 @@ net share admin$ /del
 net share c$ /del
 reg delete hklm\software\microsoft\windows\currentversion\runonce /f
 reg delete hklm\software\microsoft\windows\currentversion\run /f
-del /S "C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\*"
-del /S "C:\Users\LocalGuard\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\*"
 
 REM  Turn off Test Mode (in case they set the flag)
 bcdedit /set testsigning off
