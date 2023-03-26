@@ -4,7 +4,7 @@ Import-Module ActiveDirectory
 
 #search for DA's in the domain
 $domainAdmins = Get-ADGroupMember -Identity "Domain Admins" -Recursive
-$domainAdmins | Select-Object name | export-csv -path c:\export\domainAdmins.csv
+$domainAdmins | Select-Object name | export-csv -path c:\domainAdmins.csv
 #print out the DA's
 write-host "Domain Admins (DA):"
 $domainAdmins | Select-Object name
