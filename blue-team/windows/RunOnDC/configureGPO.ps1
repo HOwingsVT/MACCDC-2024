@@ -6,8 +6,11 @@ $GPO = "AD Domain Security Settings2"
 # Create a new GPO
 New-GPO -Name $GPO
 
+#get domain name
+$domain = (Get-ADDomain).Name
+
 # Link the GPO to the domain
-New-GPLink -Name $GPO -Target "dc=<domain name>,dc=<tld>"
+New-GPLink -Name $GPO -Target "DC=$domain,DC=local"
 
 # Define the security settings to be applied
 $SecuritySettings = @{
