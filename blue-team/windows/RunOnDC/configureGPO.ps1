@@ -1,7 +1,7 @@
 Import-Module GroupPolicy
 
 # Define the name of the GPO
-$GPO = "AD Domain Security Settings"
+$GPO = "AD Domain Security Settings2"
 
 # Create a new GPO
 New-GPO -Name $GPO
