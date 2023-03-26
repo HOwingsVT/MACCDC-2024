@@ -28,12 +28,11 @@ $SecuritySettings = @{
 
 # Apply the security settings to the GPO
 foreach ($Setting in $SecuritySettings.GetEnumerator()) {
-    Set-GPRegistryValue -Name $GPO -Key "HKLM\System\CurrentControlSet\Services\LanManServer\Parameters" -ValueName $Setting.Key -Type DWORD -Value $Setting.Value
+    Set-GPRegistryValue -Name $GPO -Key "HKLM\System\CurrentControlSet\Services\LanManServer\Parameters" -ValueName $Setting.Key -Type String -Value $Setting.Value
 }
 
 # Force a GPO update on all domain controllers and self
 Invoke-GPUpdate -Force -Computer "DC1"
-Invoke-GPUpdate -Force -Computer "DC2"
 Invoke-GPUpdate -Force -Computer $env:COMPUTERNAME
 # Add additional domain controllers as needed
 Write-host "GPO update complete. Run 'gpoupdate /force' on all machines. On Linux run 'sudo gpupdate /force' or 'sudo adgpupdate -V'"
