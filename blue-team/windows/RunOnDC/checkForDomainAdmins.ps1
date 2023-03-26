@@ -19,9 +19,8 @@ $addSelfToDA | Select-Object name
 write-host "------------------------"
 write-host "Removing anyone that isnt Administrator. If you see a user that is not an Administrator, they can add themselves as a DA."
 #remove users that are not administrators
-$addSelfToDA | Where-Object {$_.name -notmatch "Administrator"} | Remove-ADGroupMember -Identity "Add-User-To-Group"
-#remove DAs that are not administrators
-$domainAdmins | Where-Object {$_.name -notmatch "Administrator"} | Remove-ADGroupMember -Identity "Domain Admins"
+Remove-ADGroupMember -Identity "Add-User-To-Group" -Members ($addSelfToDA | Where-Object {$_.name -notmatch "Administrator"}) 
+write-host "------------------------"
 
 write-host "`nRemoving users out of groups unless they belong by default.`n"
 
