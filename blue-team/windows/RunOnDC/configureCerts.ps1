@@ -1,5 +1,8 @@
 # follow steps in this article https://blog.netwrix.com/2021/08/24/active-directory-certificate-services-risky-settings-and-how-to-remediate-them/
 Write-Host "If this errors out, check out: https://blog.netwrix.com/2021/08/24/active-directory-certificate-services-risky-settings-and-how-to-remediate-them/ and do once you get the rest of the config scripts run."
+Write-Host "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+Write-Host "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+Write-Host "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 Import-Module -Name ActiveDirectory
 Install-WindowsFeature -Name ADCS-Cert-Authority,ADCS-Web-Enrollment
 
