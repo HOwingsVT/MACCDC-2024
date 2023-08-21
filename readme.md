@@ -1,6 +1,10 @@
-# UCR's CCDC Repo:
+# VT's CCDC Repo:
 
-This is UCR's Blue Teams Repo where we host the scripts that help us during WRCCDC (and NCCDC when we move on). Even if you're not affiliated with Cyber@UCR feel free to contribute by improving scripts & suggesting new tools. Challenging Red Team is everyone's reponsibility.
+This is VT's Blue Team repo that was ripped from UCR's Blue Teams Repo. We have updated and added a number of scripts to this repo.
+
+
+From UCR:
+This is where we host the scripts that help us during WRCCDC (and NCCDC when we move on). Even if you're not affiliated with Cyber@UCR feel free to contribute by improving scripts & suggesting new tools. Challenging Red Team is everyone's reponsibility.
 
 # Sections of this Repo:
 - Automation Scripts
