@@ -1,0 +1,23 @@
+https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-0_2_EX/security/configuration_guide/b_sec_152ex_2960-x_cg/b_sec_152ex_2960-x_cg_chapter_0100.html
+
+Set or Change a Static Enable Password
+
+Enable privilege EXEC Mode
+Switch> enable
+
+Enter configuration mode
+Switch# configure terminal
+
+Define a new password or change an existing password
+Switch(config)# enable password <password>
+
+Protecting Enable and Enable Secret Passwords with Encryption
+
+Define a secret password that is saved with a nonreversible encryption method
+Switch(config)# enable secret level 1 password <password>
+
+Encrypts the password when the password is defiend or when configuration is written
+Switch(config)# service password-encryption
+
+Set username, privilege level and password for each user
+Switch(config)# username <user> privilege 1 password <password>
