@@ -68,8 +68,13 @@ iptables -L
 echo "firewall status:"
 sudo systemctl status iptables
 
+# install updates on bind
+# sudo apt install bind9
+
 ### changing bind(dns service) password
 # rndc-confgen -a -r /dev/urandom -c /etc/bind/rndc.key $password
+
+## restart
 # sudo systemctl restart bind9
 
 ## to view services
