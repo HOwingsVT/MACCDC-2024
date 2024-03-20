@@ -1,0 +1,23 @@
+https://www.cisco.com/c/en/us/td/docs/routers/access/1900/software/configuration/guide/Software_Configuration/routconf.html
+
+configure terminal
+Router> enable
+Router# configure terminal
+Router(config)#
+
+enable secret password: specifies an encrypted password to prevent unauthorized access to the router
+Router(config)# enable secret <password>
+
+Enter line configuration mode, and specify the type of line
+**DO FOR CONSOLE**
+Router(config)# line console 0
+Router(config-line)#
+
+Specifies a unique password for the console terminal line
+Router(config-line)# password <password>
+Router(config-line)#
+
+Enables password checking at terminal session login
+Router(config-line)# login
+Router (config-line)#
+
