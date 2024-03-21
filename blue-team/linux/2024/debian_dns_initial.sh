@@ -60,7 +60,7 @@ freshclam
 
 apt-get upgrade -y
 
-echo "Tripwire, ClamAV and Inotify-tools successfully installed"
+echo "Tripwire, ClamAV successfully installed"
 echo "run tripwire: sudo tripwire --check | less"
 # message
 echo "running firewall with following ruleset:"
