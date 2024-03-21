@@ -63,5 +63,16 @@ echo "run tripwire: sudo tripwire --check | less"
 echo "running firewall with following ruleset:"
 iptables -L
 
+### APACHE STUFF - DO MANUALLY ###
+
 ## Change the Apache password
 # htpasswd -b /etc/apache2/.htpasswd root $password
+
+# # Check apache/httpd status: 
+# sudo systemctl status apache2 
+# sudo systemctl status httpd
+
+# # Restart apache/httpd: 
+# sudo systemctl restart apache2 
+# sudo systemctl restart httpd
+
