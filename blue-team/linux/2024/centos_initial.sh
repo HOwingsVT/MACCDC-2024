@@ -61,10 +61,7 @@ yum install -y clamav
 # update ClamAV virus definitions
 freshclam
 
-# install inotify-tools
-yum install -y inotify-tools
-
-echo "Tripwire, ClamAV and Inotify-tools successfully installed"
+echo "Tripwire, ClamAV successfully installed"
 echo "run tripwire: sudo tripwire --check | less"
 
 yum upgrade -y
