@@ -79,3 +79,7 @@ sudo systemctl status iptables
 
 ## to view services
 # systemctl list-units --type=service | grep bind
+
+# ntpd stuff
+# sudo systemctl restart ntpd
+
