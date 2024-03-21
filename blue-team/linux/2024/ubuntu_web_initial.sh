@@ -65,6 +65,8 @@ iptables -L
 
 ### APACHE STUFF - DO MANUALLY ###
 
+## check for apache
+# ps -ea | grep apache2 
 ## Change the Apache password
 # htpasswd -b /etc/apache2/.htpasswd root $password
 
