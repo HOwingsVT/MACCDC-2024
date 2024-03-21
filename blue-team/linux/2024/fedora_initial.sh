@@ -47,9 +47,7 @@ dnf install -y clamav
 # update ClamAV virus definitions
 freshclam
 
-# install inotify-tools
-dnf install -y inotify-tools
 
-echo "Tripwire, ClamAV and Inotify-tools successfully installed"
+echo "Tripwire, ClamAV successfully installed"
 
 dnf upgrade -y
