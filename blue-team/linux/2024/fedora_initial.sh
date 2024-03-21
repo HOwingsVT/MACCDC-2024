@@ -27,7 +27,7 @@ sudo firewall-cmd --set-default-zone=drop
 firewall-cmd --permanent --zone=public --add-port=110/tcp  # POP
 firewall-cmd --permanent --zone=public --add-port=143/tcp  # IMAP
 firewall-cmd --permanent --zone=public --add-port=25/tcp   # SMTP
-firewall-cmd --permanent --zone=public --add-port=587/tcp  # SMTPS
+# firewall-cmd --permanent --zone=public --add-port=80/tcp  # HTTP (may need not sure what "webapps means")
 # Reload firewall
 firewall-cmd --reload
 
